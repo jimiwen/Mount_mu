@@ -4,21 +4,21 @@ function drawMountainLine(){
  drawPowerline(1600,2400,600,2)
 
 
+gain=random(1,2) //too much requires different compositions.
+
+drawMountMany(1200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
+
+drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
+
+drawMountMany(1200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+drawMountMany(800+gain*random(-100,100),200,colors.bg)
+drawMountMany(800+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
 
 
-drawMountMany(1200+random(-100,100),200+random(-100,100),colors.bg)
 
-drawMountMany(600+random(-100,100),1+random(-100,100),colors.bg)
-
-drawMountMany(1200+random(-100,100),600+random(-100,100),colors.bg)
-drawMountMany(800+random(-100,100),200,colors.bg)
-drawMountMany(800+random(-100,100),400+random(-100,100),colors.bg)
-
-
-
-drawMountMany(2400+random(-100,100),100+random(-100,100),colors.bg)
-drawMountMany(2300+random(-100,100),600+random(-100,100),colors.bg)
-drawMountMany(2400+random(-100,100),700+random(-100,100),colors.bg)
+drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
+drawMountMany(2300+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
 
 push()
 translate(200+300,800)
@@ -42,7 +42,7 @@ buildhouseR(2000,300)
 pop()
 
 push()
-translate(2700+200,800)
+translate(2700+100,900)
 rotate(90)
 buildhouseR(2000,300)
 pop()
