@@ -1,57 +1,95 @@
-function drawMountainLine(){
- drawPowerline(200,2400,0,1)
+function drawMountainLine(hachangle){
+  drawPowerline(200+random(-100,100),2400+random(-100,100)+random(-100,100),0,1)
 
- drawPowerline(1600,2400,600,2)
-
-
-gain=random(1,2) //too much requires different compositions.
-
-drawMountMany(1200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
-
-drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
-
-drawMountMany(1200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
-drawMountMany(800+gain*random(-100,100),200,colors.bg)
-drawMountMany(800+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+  drawPowerline(1600+random(-100,100),2400+random(-100,100),600+random(-100,100),2)
 
 
+  gain=random(1,2) //too much requires different compositions.
 
-drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
-drawMountMany(2300+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
-drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
+  // drawMountMany(1200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
+  // drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
+  // drawMountMany(1200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+  // drawMountMany(800+gain*random(-100,100),200,colors.bg)
+  // drawMountMany(800+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+  // drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
+  // drawMountMany(2300+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+  // drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
 
-push()
-translate(200+300,800)
-rotate(-90)
-buildhouseR(2000,300)
-pop()
+  //
+  //
+  // drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
+  // drawMountMany(2300+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+  // drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
+  // drawMountMany(800+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+  // drawMountMany(800+gain*random(-100,100),200,colors.bg)
+  // drawMountMany(1200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+  // drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
+  // drawMountMany(1200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
+  //
+  //
+  // drawMountMany(200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
+  // drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
+  // drawMountMany(200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+  // drawMountMany(700+gain*random(-100,100),200,colors.bg)
+  // drawMountMany(300+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+  // drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
+  // drawMountMany(2200+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+  // drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
 
 
-drawPowerline(300,2000,0,1)
-push()
-translate(1000+300,400)
-rotate(0)
-buildhouseR(2000,300)
-pop()
+
+    // drawMountMany(200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
+    // drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
+    // drawMountMany(200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+    // drawMountMany(700+gain*random(-100,100),200,colors.bg)
+    // drawMountMany(300+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+    // drawMountMany(1400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
+    // drawMountMany(1200+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+    // drawMountMany(1600+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
 
 
-push()
-translate(1000+200,300)
-rotate(90)
-buildhouseR(2000,300)
-pop()
+    drawMountMany(200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
+    drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
+    drawMountMany(800+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+    drawMountMany(700+gain*random(-100,100),200,colors.bg)
+    drawMountMany(300+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+    drawMountMany(1400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
+    drawMountMany(1200+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+    drawMountMany(1800+gain*random(-100,100),300+gain*random(-100,100),colors.bg)
 
-push()
-translate(2700+100,900)
-rotate(90)
-buildhouseR(2000,300)
-pop()
 
-// push()
-// translate(2200+400,700)
-// rotate(180)
-// buildhouseR(2000,300)
-// pop()
+  push()
+  translate(200+300,800)
+  rotate(-90)
+  buildhouseR(2000,300)
+  pop()
+
+
+  drawPowerline(300,2000,0,1)
+  push()
+  translate(1000+300,400)
+  rotate(0)
+  buildhouseR(2000,300)
+  pop()
+
+
+  push()
+  translate(1000+200,300)
+  rotate(90)
+  buildhouseR(2000,300)
+  pop()
+
+  push()
+  translate(2700+150,1400)
+  rotate(90)
+  buildhouseR(2000,300)
+  pop()
+
+  // push()
+  // translate(2200+400,700)
+  // rotate(180)
+  // buildhouseR(2000,300)
+  // pop()
 
 
 
@@ -140,24 +178,24 @@ function drawPowerline(start,length,height,width){
       [k+10,1200-random(200,330)-height],
       [k,1200-random(200,330)-height],
     ];
-noFill()
-  arc(
-    (points[1][0]+pointsprevious[1][0])/2,
-    (points[3][1]+pointsprevious[3][1])/2-random(150,180),
-    points[1][0]-pointsprevious[1][0]+100,
-    400+random(0,50),
-    -PI/6+PI/2+random(-0.2,0.2),PI/6+PI/2+random(-0.2,0.2)
-    );
-
-  if (random(0,1)<0.3){
+    noFill()
     arc(
       (points[1][0]+pointsprevious[1][0])/2,
       (points[3][1]+pointsprevious[3][1])/2-random(150,180),
       points[1][0]-pointsprevious[1][0]+100,
       400+random(0,50),
       -PI/6+PI/2+random(-0.2,0.2),PI/6+PI/2+random(-0.2,0.2)
+    );
+
+    if (random(0,1)<0.3){
+      arc(
+        (points[1][0]+pointsprevious[1][0])/2,
+        (points[3][1]+pointsprevious[3][1])/2-random(150,180),
+        points[1][0]-pointsprevious[1][0]+100,
+        400+random(0,50),
+        -PI/6+PI/2+random(-0.2,0.2),PI/6+PI/2+random(-0.2,0.2)
       );
-}
+    }
 
     pointsprevious=points;
     console.log(pointsprevious)
@@ -172,34 +210,22 @@ noFill()
   }
 }
 
-function drawMountMany(X,Y,ff){
+function drawMountMany(X,Y,ff,hachangle){
+
+
 
   for (k=0;k<1000;k+=random(2,10)){
-     drawMountainOne(X+k,Y+k*random(0.6 ,10),ff)
- drawMountainOne(X+k,Y+k*random(0.6 ,10),ff)
-        drawMountainOne(X-k,Y+k*random(2,10),ff)
+    drawMountainOne(X+k,Y+k*random(0.6 ,10),ff,hachangle)
+    drawMountainOne(X+k,Y+k*random(0.6 ,10),ff,hachangle)
+    drawMountainOne(X-k,Y+k*random(2,10),ff,hachangle)
 
-if(random(0,1)<0.8){
-  rc.circle(X+k*random(0.6 ,10),Y+k*random(0.6 ,1),random(10,240), {
-    fill: colors.sea,
-    fillStyle: random(["hachure"]),
-    fillWeight: random(0.1,0.2),
-    hachureAngle: random(0,193),
-    stroke: "transparent",
-  });
-  }
-  if(random(0,1)<0.8){
-    rc.circle(X-k*random(0.2 ,6),Y+k*random(2 ,4),random(10,240), {
-      fill: colors.body2,
-      fillStyle: random(["hachure"]),
-      fillWeight: random(0.1,0.2),
-      hachureAngle: random(0,193),
-      stroke: "transparent",
-    });
+lrpo=random([-1,-1]);
+
+//same direction
 
     if(random(0,1)<0.8){
-      rc.circle(X-k*random(0.6 ,6),Y+k*random(2 ,8),random(10,240), {
-        fill: colors.sand,
+      rc.circle(X+lrpo*k*random(0.6 ,10),Y+k*random(0.6 ,1),random(10,240), {
+        fill: colors.sea,
         fillStyle: random(["hachure"]),
         fillWeight: random(0.1,0.2),
         hachureAngle: random(0,193),
@@ -207,31 +233,48 @@ if(random(0,1)<0.8){
       });
     }
     if(random(0,1)<0.8){
-      rc.circle(X-k*random(0.8 ,2),Y+k*random(0.8 ,2),random(10,240), {
-        fill: colors.main,
+      rc.circle(X-lrpo*k*random(0.2 ,6),Y+k*random(2 ,4),random(10,240), {
+        fill: colors.body2,
         fillStyle: random(["hachure"]),
-        fillWeight: random(0.5,1),
+        fillWeight: random(0.1,0.2),
         hachureAngle: random(0,193),
         stroke: "transparent",
       });
+    }
+      if(random(0,1)<0.8){
+        rc.circle(X-lrpo*k*random(0.6 ,6),Y+k*random(2 ,8),random(10,240), {
+          fill: colors.sand,
+          fillStyle: random(["hachure"]),
+          fillWeight: random(0.1,0.2),
+          hachureAngle: random(0,193),
+          stroke: "transparent",
+        });
+      }
+      if(random(0,1)<0.8){
+        rc.circle(X-k*lrpo*random(1.2 ,3),Y+k*random(1.2 ,3),random(10,240), {
+          fill: colors.main,
+          fillStyle: random(["hachure"]),
+          fillWeight: random(0.3,0.7),
+          hachureAngle: random(0,193),
+          stroke: "transparent",
+        });
+      }
+      // if(random(0,1)<0.8){
+      //   rc.circle(X-k*random(0.2 ,6),Y+k*random(2 ,4),random(10,240), {
+      //     fill: colors.sea,
+      //     fillStyle: random(["hachure"]),
+      //     fillWeight: random(0.1,0.2),
+      //     hachureAngle: random(0,193),
+      //     stroke: "transparent",
+      //   });
+      // }
+    }
   }
-}
-}
-}
 
 
-function drawCloud(points){
-  console.log(points)
-  rc.polygon(points, {
-    fill: colors.sea,
-    fillStyle: random(["hachure"]),
-    fillWeight: random(1,2),
-    hachureAngle: random(0,193),
-    stroke: "transparent",
-  });
-}
 
-function drawMountainOne(X,Y,ff){
+
+function drawMountainOne(X,Y,ff,hachangle){
   mounttop=random(1,3);
   points=[
     [X,Y],
@@ -254,7 +297,7 @@ function drawMountainOne(X,Y,ff){
     fill: ff,
     fillStyle: random(["hachure"]),
     fillWeight: min([random(0.01,4),random(0.01,4)]),
-    hachureAngle: random(0,193),
+    hachureAngle: hachangle,
     stroke: "transparent",
   });
 }

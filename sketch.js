@@ -74,11 +74,12 @@ for (let k=0;k<80;k++){
 	//print(k)
 	}
 
-
+hachangle=random(0,90)
 drawFrames()
 push()
 translate(0,500)
-drawMountainLine()
+drawMountainLine(hachangle)
+drawMountainLine(hachangle)
 pop()
 drawFrames(colors.main,2)
 drawFrames(colors.sand,1)
