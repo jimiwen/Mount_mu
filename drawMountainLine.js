@@ -1,19 +1,19 @@
 function drawMountainLine(hachangle){
-  drawPowerline(200+random(-100,100),2400+random(-100,100)+random(-100,100),0,1)
+  drawPowerline(200+random(-100,100),2400+random(-100,100)+random(-100,100),1)
 
   drawPowerline(1600+random(-100,100),2400+random(-100,100),600+random(-100,100),2)
 
 
-  gain=random(1,2) //too much requires different compositions.
+  gain=random(1,6) //too much requires different compositions.
 
-  // drawMountMany(1200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
-  // drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
-  // drawMountMany(1200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
-  // drawMountMany(800+gain*random(-100,100),200,colors.bg)
-  // drawMountMany(800+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
-  // drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
-  // drawMountMany(2300+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
-  // drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
+  // drawMountMany(1200+gain*random(-200,200),200+gain*random(-200,200),colors.bg)
+  // drawMountMany(600+gain*random(-200,200),1+gain*random(-200,200),colors.bg)
+  // drawMountMany(1200+gain*random(-200,200),600+gain*random(-200,200),colors.bg)
+  // drawMountMany(800+gain*random(-200,200),200,colors.bg)
+  // drawMountMany(800+gain*random(-200,200),400+gain*random(-200,200),colors.bg)
+  // drawMountMany(2400+gain*random(-200,200),100+gain*random(-200,200),colors.bg)
+  // drawMountMany(2300+gain*random(-100,200),600+gain*random(-200,200),colors.bg)
+  // drawMountMany(2400+gain*random(-200,200),700+gain*random(-200,200),colors.bg)
 
   //
   //
@@ -38,24 +38,24 @@ function drawMountainLine(hachangle){
 
 
 
-    // drawMountMany(200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
-    // drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
-    // drawMountMany(200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
-    // drawMountMany(700+gain*random(-100,100),200,colors.bg)
-    // drawMountMany(300+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
-    // drawMountMany(1400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
-    // drawMountMany(1200+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
-    // drawMountMany(1600+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
+    // drawMountMany(200+gain*random(-200,200),200+gain*random(-100,100),colors.bg)
+    // drawMountMany(600+gain*random(-200,200),1+gain*random(-100,100),colors.bg)
+    // drawMountMany(200+gain*random(-200,200),600+gain*random(-100,100),colors.bg)
+    // drawMountMany(700+gain*random(-200,200),200,colors.bg)
+    // drawMountMany(300+gain*random(-200,200),400+gain*random(-100,100),colors.bg)
+    // drawMountMany(1400+gain*random(-200,200),100+gain*random(-100,100),colors.bg)
+    // drawMountMany(1200+gain*random(-200,200),400+gain*random(-100,100),colors.bg)
+    // drawMountMany(1600+gain*random(-200,200),700+gain*random(-100,100),colors.bg)
 
 
-    drawMountMany(200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
-    drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
-    drawMountMany(800+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
-    drawMountMany(700+gain*random(-100,100),200,colors.bg)
-    drawMountMany(300+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
-    drawMountMany(1400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
-    drawMountMany(1200+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
-    drawMountMany(1800+gain*random(-100,100),300+gain*random(-100,100),colors.bg)
+    drawMountMany(200+gain*random(-200,200),200+gain*random(-200,200),colors.bg)
+    drawMountMany(600+gain*random(-200,200),1+gain*random(-200,200),colors.bg)
+    drawMountMany(800+gain*random(-200,200),600+gain*random(-200,200),colors.bg)
+    drawMountMany(700+gain*random(-200,100),200,colors.bg)
+    drawMountMany(300+gain*random(-200,200),400+gain*random(-200,200),colors.bg)
+    drawMountMany(1400+gain*random(-200,200),100+gain*random(-200,200),colors.bg)
+    drawMountMany(1200+gain*random(-200,200),400+gain*random(-200,200),colors.bg)
+    drawMountMany(1800+gain*random(-200,200),300+gain*random(-200,200),colors.bg)
 
 
   push()
@@ -164,19 +164,20 @@ function buildhouseR(X,Y){
 
 function drawPowerline(start,length,height,width){
   angleMode(RADIANS)
+  shiftpowerline=random(0,100)
   //cant draw outside canvas
   let pointsprevious= [
-    [100,1100],
-    [100,1100],
-    [100,1100],
-    [100,1100],
+    [100,1100+shiftpowerline+random(-30,30)],
+    [100,1100+shiftpowerline+random(-30,30)],
+    [100,1100+shiftpowerline+random(-30,30)],
+    [100,1100+shiftpowerline+random(-30,30)],
   ];
   for (k=start;k<length;k+=width*random(100,400)){
     points=[
-      [k,1200-height/20],
-      [k+10,1200-height/20],
-      [k+10,1200-random(200,330)-height],
-      [k,1200-random(200,330)-height],
+      [k,1200-height/20+shiftpowerline],
+      [k+10,1200-height/20+shiftpowerline],
+      [k+10,1200-random(200,330)-height+shiftpowerline],
+      [k,1200-random(200,330)-height+shiftpowerline],
     ];
     noFill()
     arc(
@@ -202,7 +203,7 @@ function drawPowerline(start,length,height,width){
     rc.polygon(points, {
       fill: colors.main,
       fillStyle: random(["hachure"]),
-      fillWeight: random(1,2),
+      fillWeight: random(0.3,0.6),
       hachureAngle: random(0,193),
       stroke: "solid",
     });
@@ -219,24 +220,38 @@ function drawMountMany(X,Y,ff,hachangle){
     drawMountainOne(X+k,Y+k*random(0.6 ,10),ff,hachangle)
     drawMountainOne(X-k,Y+k*random(2,10),ff,hachangle)
 
-lrpo=random([-1,-1]);
+lrpo=random([1,1]);
 
 //same direction
 
     if(random(0,1)<0.8){
       rc.circle(X+lrpo*k*random(0.6 ,10),Y+k*random(0.6 ,1),random(10,240), {
-        fill: colors.sea,
+        fill: colors.sea1,
         fillStyle: random(["hachure"]),
-        fillWeight: random(0.1,0.2),
+        fillWeight: random(0.3,0.6),
+        hachureAngle: random(0,193),
+        stroke: "transparent",
+      });
+      rc.circle(X+lrpo*k*random(0.6 ,10),Y+k*random(0.6 ,1),random(10,240), {
+        fill: colors.sea2,
+        fillStyle: random(["hachure"]),
+        fillWeight: random(0.3,0.6),
         hachureAngle: random(0,193),
         stroke: "transparent",
       });
     }
     if(random(0,1)<0.8){
       rc.circle(X-lrpo*k*random(0.2 ,6),Y+k*random(2 ,4),random(10,240), {
+        fill: colors.body1,
+        fillStyle: random(["hachure"]),
+        fillWeight: random(0.3,0.6),
+        hachureAngle: random(0,193),
+        stroke: "transparent",
+      });
+      rc.circle(X-lrpo*k*random(0.2 ,6),Y+k*random(2 ,4),random(10,240), {
         fill: colors.body2,
         fillStyle: random(["hachure"]),
-        fillWeight: random(0.1,0.2),
+        fillWeight: random(0.3,0.6),
         hachureAngle: random(0,193),
         stroke: "transparent",
       });
@@ -245,13 +260,13 @@ lrpo=random([-1,-1]);
         rc.circle(X-lrpo*k*random(0.6 ,6),Y+k*random(2 ,8),random(10,240), {
           fill: colors.sand,
           fillStyle: random(["hachure"]),
-          fillWeight: random(0.1,0.2),
+          fillWeight: random(0.2,0.4),
           hachureAngle: random(0,193),
           stroke: "transparent",
         });
       }
       if(random(0,1)<0.8){
-        rc.circle(X-k*lrpo*random(1.2 ,3),Y+k*random(1.2 ,3),random(10,240), {
+        rc.circle(X-k*lrpo*random(1.2 ,3),Y+k*random(1.2 ,2),random(10,240), {
           fill: colors.main,
           fillStyle: random(["hachure"]),
           fillWeight: random(0.3,0.7),
@@ -259,6 +274,26 @@ lrpo=random([-1,-1]);
           stroke: "transparent",
         });
       }
+      if(random(0,1)<0.8){
+        rc.circle(X-k*lrpo*random(1.2 ,3),Y+k*random(1.2 ,5),random(10,240), {
+          fill: colors.main,
+          fillStyle: random(["hachure"]),
+          fillWeight: random(0.3,0.7),
+          hachureAngle: random(0,193),
+          stroke: "transparent",
+        });
+      }
+      if(random(0,1)<0.8){
+        rc.circle(X-k*lrpo*random(1.2 ,3),Y+k*random(1.2 ,5),random(10,240), {
+          fill: colors.main,
+          fillStyle: random(["hachure"]),
+          fillWeight: random(0.3,0.7),
+          hachureAngle: random(0,193),
+          stroke: "transparent",
+        });
+      }
+
+
       // if(random(0,1)<0.8){
       //   rc.circle(X-k*random(0.2 ,6),Y+k*random(2 ,4),random(10,240), {
       //     fill: colors.sea,

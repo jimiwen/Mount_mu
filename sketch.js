@@ -41,14 +41,11 @@ const coloring={
 const colors = {
   main: "#f1f1f1",
   bg: "#02040a",
-  doorknob: "#fdb827",
-  sea: '#52c2eb',
+  sea1: '#065f80',
+  sea2: '#52c2eb',
   sand:'#a18360',
-  roof:'#b03737',
-  door:'#5ead80',
-skin:'#f5dba4',
-body1:'#c5e6d5',
-body2:'#70cfc4'
+body2:'#056e61',
+body1:'#70cfc4'
 };
 
 let  ground = 800 * 0.95;
@@ -65,10 +62,10 @@ randomSeed(int(fxrand()*100000000))
 }
 
 function draw() {
+//blendMode(DARKEST) 畫出裱
 blendMode(BLEND)
 
-
-for (let k=0;k<80;k++){
+for (let k=0;k<40;k++){
 
 		carve()
 	//print(k)
@@ -78,9 +75,11 @@ hachangle=random(0,90)
 drawFrames()
 push()
 translate(0,500)
-drawMountainLine(hachangle)
-drawMountainLine(hachangle)
+ drawMountainLine(hachangle)
+ // blendMode(BLEND)
+ drawMountainLine(hachangle)
 pop()
+//blendMode(LIGHTEST)
 drawFrames(colors.main,2)
 drawFrames(colors.sand,1)
 drawFrames(colors.sand,1)
@@ -122,8 +121,8 @@ function drawFrames(coloring,thick){
 
 function carve(){
 
-  let width =2400
-  	let height = 2400
+  let width =1500
+  	let height = 1500
 
   	left_x = int(width * -0.5)
   	right_x = int(width * 1.5)
@@ -172,8 +171,8 @@ function carve(){
 
 	//print("angle"+m[100][100])
 
-	let	x = 100+random(-100,2000)
-	let y = 100+random(-100,2000)
+	let	x = 100+random(100,2900)
+	let y = 100+random(100,2900)
 	let num_steps=100
 
 	strokeWeight(0.1)
@@ -195,8 +194,8 @@ function carve(){
 	//vertex(1100,1300)
 	beginShape()
 	let dice2=random(0,1)
-	let shapesize=random(30,700);
-	let stepsize=random(0.1,0.5);
+	let shapesize=random(330,700);
+	let stepsize=random(0.1,0.3);
 	stroke(random([coloring.color1,coloring.color2,coloring.color3]))
 	for (k=0;k<50+random(1050,35000);k+=1+random(0,3)) {
 		strokeWeight(0.1+random(0,0.5))
@@ -204,7 +203,7 @@ function carve(){
 
 		x_offset = x - left_x
 		y_offset = y - top_y
-		if (x_offset<3800 && y_offset< 3800 && x_offset>0 && y_offset>0  ) {
+		if (x_offset<3100 && y_offset< 3100 && x_offset>0 && y_offset>0  ) {
 			column_index = int(x_offset / resolution)
 			row_index = int(y_offset / resolution)
 			//	print(column_index,row_index)
@@ -268,3 +267,6 @@ function carve(){
 	}
 
 }
+//     License : Copyright (C) 2022 Jimi Y. C. Wen . All rights reserved.\n
+//     Licensed under CC BY-NC-SA 4.0
+//    https://github.com/jimiwen
