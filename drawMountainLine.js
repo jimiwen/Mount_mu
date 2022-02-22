@@ -15,7 +15,6 @@ function drawMountainLine(hachangle,handstyle,compStyle){
     drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg,hachangle,handstyle)
     drawMountMany(2300+gain*random(-100,200),600+gain*random(-100,100),colors.bg,hachangle,handstyle)
     drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg,hachangle,handstyle)
-
   }else if (compStyle<0.4){
     drawMountMany(1200+gain*random(-100,100),600+gain*random(-100,100),colors.bg,hachangle,handstyle)
     drawMountMany(1800+gain*random(-400,400),200,colors.bg,hachangle,handstyle)
@@ -34,7 +33,6 @@ function drawMountainLine(hachangle,handstyle,compStyle){
     drawMountMany(1400+gain*random(-200,200),100+gain*random(-100,100),colors.bg,hachangle,handstyle)
     drawMountMany(1200+gain*random(-200,200),400+gain*random(-100,100),colors.bg,hachangle,handstyle)
     drawMountMany(1600+gain*random(-200,200),700+gain*random(-100,100),colors.bg,hachangle,handstyle)
-
   }else if(compStyle<0.7){
     drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg,hachangle,handstyle)
     drawMountMany(2300+gain*random(-100,100),600+gain*random(-100,100),colors.bg,hachangle,handstyle)
@@ -53,7 +51,6 @@ function drawMountainLine(hachangle,handstyle,compStyle){
     drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg,hachangle,handstyle)
     drawMountMany(2200+gain*random(-100,100),400+gain*random(-100,100),colors.bg,hachangle,handstyle)
     drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg,hachangle,handstyle)
-    
   }else {
     drawMountMany(200+gain*random(-200,200),200+gain*random(-200,200),colors.bg,hachangle,handstyle)
     drawMountMany(600+gain*random(-200,200),1+gain*random(-200,200),colors.bg,hachangle,handstyle)
@@ -63,7 +60,6 @@ function drawMountainLine(hachangle,handstyle,compStyle){
     drawMountMany(1400+gain*random(-200,200),100+gain*random(-200,200),colors.bg,hachangle,handstyle)
     drawMountMany(1200+gain*random(-200,200),400+gain*random(-200,200),colors.bg,hachangle,handstyle)
     drawMountMany(1800+gain*random(-200,200),300+gain*random(-200,200),colors.bg,hachangle,handstyle)
-
   }
 
 

@@ -1,33 +1,42 @@
 let seasonpicker= Xrandom(0,1);
 let boxStyle=Xrandom(0,1);
 let handStyle=Xrandom(0,1);
-let compStyle=Xrandom(0,1);
+let windowNum=Xrandom(0,1);
 
 function Xrandom(x,y){
   return (y-x)*fxrand()+x;
 }
 
 window.$fxhashFeatures = {
-  "Season": getSeasonStyle(seasonpicker),
+  "Guardian Beast": getSeasonStyle(seasonpicker),
   "State of the scroll": getBoxStyle(boxStyle),
-  "Which Hand?": getHandStyle(handStyle)
+  "Left or right?": getHandStyle(handStyle),
+    "Out of window:": getwindowNum(windowNum)
 }
 
-console.log(getBoxStyle(boxStyle))
-console.log(getSeasonStyle(seasonpicker))
-console.log(getHandStyle(handStyle))
+// console.log(getBoxStyle(boxStyle))
+// console.log(getSeasonStyle(seasonpicker))
+// console.log(getHandStyle(handStyle))
+// console.log(getwindowNum(windowNum))
 
+function getwindowNum(value){
+  if (value<0.2) return 'Jia';
+  else if (value<0.4) return 'Yi'
+  else if (value<0.6) return 'Bing'
+  else if (value<0.8) return 'Ding'
+  else if (value<0.9) return 'Wu'
+  else return 'Ji'
+}
 
 function getSeasonStyle(value){
-  if (value<0.5) return 'Spring';
-  else if (value<0.70) return 'Summer'
-  else if (value<0.90) return 'Autumn'
-  else return 'Winter'
+  if (value<0.5) return 'Qinglong';
+  else if (value<0.70) return 'Zhuque'
+  else if (value<0.90) return 'Baihu'
+  else return 'Xuanwu'
 }
 
 function getBoxStyle(value){
-  if (value<0.02) return 'What frames?';
-  else if (value<0.1) return 'No, I paint outside the frame'
+ if (value<0.09) return 'Opps I paint out of the frame'
   else return 'Pristine'
 }
 
@@ -113,7 +122,7 @@ function draw() {
 
 
 
-if (boxStyle<0.1){
+if (boxStyle<0.09){
   blendMode(DARKEST) //畫出裱
 }else{
   blendMode(BLEND)
@@ -129,18 +138,11 @@ hachangle=random(0,90)
 drawFrames()
 push()
 translate(0,500)
- drawMountainLine(hachangle,handStyle,compStyle)
+ drawMountainLine(hachangle,handStyle,windowNum)
   blendMode(BLEND)
- drawMountainLine(hachangle,handStyle,compStyle)
+ drawMountainLine(hachangle,handStyle,windowNum)
 pop()
 
-if (boxStyle<0.02){
-  blendMode(LIGHTEST)
-}else if (boxStyle<0.1){
-  blendMode(BLEND)
-}else{
-
-}
 
 drawFrames(colors.main,2)
 drawFrames(random([colors.sand1,colors.sand2]),1)
