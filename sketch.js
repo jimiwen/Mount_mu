@@ -1,4 +1,4 @@
-let bgpicker= Xrandom(0,1);
+let seasonpicker= Xrandom(0,1);
 let boxStyle=Xrandom(0,1);
 
 let leadCames=Xrandom(2.1,5.1);
@@ -8,19 +8,19 @@ function Xrandom(x,y){
 }
 
 window.$fxhashFeatures = {
-  "YOUR WORLD BLEND": getBGStyle(bgpicker),
+  "YOUR WORLD BLEND": getSeasonStyle(seasonpicker),
   "tea hut blend": getBoxStyle(boxStyle),
 }
 
 console.log(getBoxStyle(boxStyle))
-console.log(getBGStyle(bgpicker))
+console.log(getSeasonStyle(seasonpicker))
 
 
-function getBGStyle(value){
-  if (value<0.05) return 'SCREEN';
-  else if (value<0.15) return 'ADD'
-  else if (value<0.45) return 'DIFFERENCE'
-  else return 'OVERLAY'
+function getSeasonStyle(value){
+  if (value<0.45) return 'Spring';
+  else if (value<0.65) return 'Summer'
+  else if (value<0.85) return 'Autumn'
+  else return 'Winter'
 }
 
 function getBoxStyle(value){
@@ -38,15 +38,52 @@ const coloring={
 }
 
 
+// const colors = {
+//   main: "#f1f1f1",
+//   bg: "#02040a",
+//   sea1: '#065f80',
+//   sea2: '#52c2eb',
+//   sand1:'#a18360',
+//   sand2:'#52483c',
+// body2:'#056e61',
+// body1:'#70cfc4'
+// };
+
+//5% winter
+// const colors = {
+//   main: "#02040a",
+//   bg: "#f1f1f1",
+//   sea1: '#065f80',
+//   sea2: '#52c2eb',
+//   sand1:'#02040a',
+//   sand2:'#52483c',
+// body2:'#056e61',
+// body1:'#70cfc4'
+// };
+
+//summer 15%
 const colors = {
-  main: "#f1f1f1",
-  bg: "#02040a",
-  sea1: '#065f80',
-  sea2: '#52c2eb',
-  sand:'#a18360',
-body2:'#056e61',
-body1:'#70cfc4'
+  main: "#e3d5d5",
+  bg: "#692545",
+  sea1: '#bd112b',
+  sea2: '#de4573',
+  sand1:'#3c4d3d',
+  sand2:'#2d4038',
+body2:'#f07832',
+body1:'#edaf3b'
 };
+
+// golden tiger 15%
+// const colors = {
+//   main: "#fa7c1b",
+//   bg: "#f5eec6",
+//   sea1: '#ffd608',
+//   sea2: '#f5c207',
+//   sand1:'#9e3a00',
+//   sand2:'#d15b00',
+// body2:'#ffdc2b',
+// body1:'#ffbe0d'
+// };
 
 let  ground = 800 * 0.95;
 let rc;
@@ -62,8 +99,8 @@ randomSeed(int(fxrand()*100000000))
 }
 
 function draw() {
-//blendMode(DARKEST) 畫出裱
-blendMode(BLEND)
+blendMode(DARKEST) //畫出裱
+//blendMode(BLEND)
 
 for (let k=0;k<40;k++){
 
@@ -76,14 +113,14 @@ drawFrames()
 push()
 translate(0,500)
  drawMountainLine(hachangle)
- // blendMode(BLEND)
+  blendMode(BLEND)
  drawMountainLine(hachangle)
 pop()
 //blendMode(LIGHTEST)
 drawFrames(colors.main,2)
-drawFrames(colors.sand,1)
-drawFrames(colors.sand,1)
-drawFrames(colors.sand,1)
+drawFrames(random([colors.sand1,colors.sand2]),1)
+drawFrames(random([colors.sand1,colors.sand2]),1)
+drawFrames(random([colors.sand1,colors.sand2]),1)
 }
 
 function exportImage() {

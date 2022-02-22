@@ -6,17 +6,30 @@ function drawMountainLine(hachangle){
 
   gain=random(1,6) //too much requires different compositions.
 
-  // drawMountMany(1200+gain*random(-200,200),200+gain*random(-200,200),colors.bg)
-  // drawMountMany(600+gain*random(-200,200),1+gain*random(-200,200),colors.bg)
-  // drawMountMany(1200+gain*random(-200,200),600+gain*random(-200,200),colors.bg)
-  // drawMountMany(800+gain*random(-200,200),200,colors.bg)
-  // drawMountMany(800+gain*random(-200,200),400+gain*random(-200,200),colors.bg)
-  // drawMountMany(2400+gain*random(-200,200),100+gain*random(-200,200),colors.bg)
-  // drawMountMany(2300+gain*random(-100,200),600+gain*random(-200,200),colors.bg)
-  // drawMountMany(2400+gain*random(-200,200),700+gain*random(-200,200),colors.bg)
+//0.2
+  // drawMountMany(1200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
+  // drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
+  // drawMountMany(1200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+  // drawMountMany(800+gain*random(-100,100),200,colors.bg)
+  // drawMountMany(800+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+  // drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
+  // drawMountMany(2300+gain*random(-100,200),600+gain*random(-100,100),colors.bg)
+  // drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
+  //
+
+//0.2
+
+  // drawMountMany(1200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
+  // drawMountMany(1800+gain*random(-400,400),200,colors.bg)
+  // drawMountMany(1700+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
+  // drawMountMany(2400+gain*random(-400,400),100+gain*random(-100,100),colors.bg)
+  // drawMountMany(2300+gain*random(-100,200),200+gain*random(-100,100),colors.bg)
+  // drawMountMany(2400+gain*random(-300,300),700+gain*random(-100,100),colors.bg)
+  // drawMountMany(1200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
+  // drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
 
   //
-  //
+  //0.2
   // drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
   // drawMountMany(2300+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
   // drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
@@ -26,7 +39,9 @@ function drawMountainLine(hachangle){
   // drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
   // drawMountMany(1200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
   //
-  //
+
+
+  //0.2
   // drawMountMany(200+gain*random(-100,100),200+gain*random(-100,100),colors.bg)
   // drawMountMany(600+gain*random(-100,100),1+gain*random(-100,100),colors.bg)
   // drawMountMany(200+gain*random(-100,100),600+gain*random(-100,100),colors.bg)
@@ -35,9 +50,9 @@ function drawMountainLine(hachangle){
   // drawMountMany(2400+gain*random(-100,100),100+gain*random(-100,100),colors.bg)
   // drawMountMany(2200+gain*random(-100,100),400+gain*random(-100,100),colors.bg)
   // drawMountMany(2400+gain*random(-100,100),700+gain*random(-100,100),colors.bg)
+  //
 
-
-
+//0.2
     // drawMountMany(200+gain*random(-200,200),200+gain*random(-100,100),colors.bg)
     // drawMountMany(600+gain*random(-200,200),1+gain*random(-100,100),colors.bg)
     // drawMountMany(200+gain*random(-200,200),600+gain*random(-100,100),colors.bg)
@@ -47,7 +62,7 @@ function drawMountainLine(hachangle){
     // drawMountMany(1200+gain*random(-200,200),400+gain*random(-100,100),colors.bg)
     // drawMountMany(1600+gain*random(-200,200),700+gain*random(-100,100),colors.bg)
 
-
+//0.2
     drawMountMany(200+gain*random(-200,200),200+gain*random(-200,200),colors.bg)
     drawMountMany(600+gain*random(-200,200),1+gain*random(-200,200),colors.bg)
     drawMountMany(800+gain*random(-200,200),600+gain*random(-200,200),colors.bg)
@@ -143,7 +158,7 @@ function buildhouseR(X,Y){
 
 
   rc.polygon(frontsidepoints, {
-    fill: colors.sand,
+    fill: random([colors.sand1,colors.sand2]),
     fillStyle: random(["hachure"]),
     fillWeight: random(1,2),
     hachureAngle: random(90,93),
@@ -151,7 +166,7 @@ function buildhouseR(X,Y){
   });
 
   rc.polygon(leftsidepoints, {
-    fill: colors.sand,
+    fill: random([colors.sand1,colors.sand2]),
     fillStyle: random(["hachure"]),
     fillWeight: random(1,2),
     hachureAngle: random(0,1),
@@ -220,7 +235,10 @@ function drawMountMany(X,Y,ff,hachangle){
     drawMountainOne(X+k,Y+k*random(0.6 ,10),ff,hachangle)
     drawMountainOne(X-k,Y+k*random(2,10),ff,hachangle)
 
-lrpo=random([1,1]);
+lrpo=random([1,1]); //0.3
+// lrpo=random([-1,-1]); 0.3
+//lrpo=random([1,-1]); 0.2
+//lrpo=random([-1,1]); 0.2
 
 //same direction
 
@@ -258,7 +276,7 @@ lrpo=random([1,1]);
     }
       if(random(0,1)<0.8){
         rc.circle(X-lrpo*k*random(0.6 ,6),Y+k*random(2 ,8),random(10,240), {
-          fill: colors.sand,
+          fill: random([colors.sand1,colors.sand2]),
           fillStyle: random(["hachure"]),
           fillWeight: random(0.2,0.4),
           hachureAngle: random(0,193),
@@ -283,7 +301,7 @@ lrpo=random([1,1]);
           stroke: "transparent",
         });
       }
-      if(random(0,1)<0.8){
+      if(random(0,1)<0.5){
         rc.circle(X-k*lrpo*random(1.2 ,3),Y+k*random(1.2 ,5),random(10,240), {
           fill: colors.main,
           fillStyle: random(["hachure"]),
@@ -311,21 +329,38 @@ lrpo=random([1,1]);
 
 function drawMountainOne(X,Y,ff,hachangle){
   mounttop=random(1,3);
+  // points=[
+  //   [X,Y],
+  //   [X+10,Y-30],
+  //   [X+15,Y-80],
+  //   [X+20,Y-80],
+  //   [X+20+mounttop,Y-80],
+  //   [X+30+mounttop,Y-30],
+  //   [X+40+mounttop,Y],
+  //   [X+40+mounttop,Y+10],
+  //   [X+45+mounttop,Y+10],
+  //   [X+30+mounttop,Y-20],
+  //   [X+20+mounttop,Y-20],
+  //   [X+20+mounttop,Y-70],
+  //   [X+10+mounttop,Y-20],
+  //   [X+mounttop,Y+10],
+  // ];
+stkv= random(3,15);
   points=[
     [X,Y],
-    [X+10,Y-30],
-    [X+15,Y-80],
-    [X+20,Y-80],
-    [X+20+mounttop,Y-80],
-    [X+30+mounttop,Y-30],
-    [X+40+mounttop,Y],
-    [X+40+mounttop,Y+10],
-    [X+45+mounttop,Y+10],
-    [X+30+mounttop,Y-20],
-    [X+20+mounttop,Y-20],
-    [X+20+mounttop,Y-70],
-    [X+10+mounttop,Y-20],
-    [X+mounttop,Y+10],
+    [X+10+random(-stkv,stkv),Y-30+random(-stkv,stkv)],
+    [X+15+random(-stkv,stkv),Y-80+random(-stkv,stkv)],
+    [X+20+random(-stkv,stkv),Y-80+random(-stkv,stkv)],
+    [X+20+mounttop+random(-stkv,stkv),Y-80+random(-stkv,stkv)],
+    [X+30+mounttop+random(-stkv,stkv),Y-30+random(-stkv,stkv)],
+    [X+40+mounttop+random(-stkv,stkv),Y+random(-stkv,stkv)],
+    [X+40+mounttop+random(-stkv,stkv),Y+10+random(-stkv,stkv)],
+    [X+45+mounttop+random(-stkv,stkv),Y+10+random(-stkv,stkv)],
+    [X+30+mounttop+random(-stkv,stkv),Y-20+random(-stkv,stkv)],
+    [X+20+mounttop+random(-stkv,stkv),Y-20+random(-stkv,stkv)],
+    [X+20+mounttop+random(-stkv,stkv),Y-70+random(-stkv,stkv)],
+    [X+10+mounttop+random(-stkv,stkv),Y-20+random(-stkv,stkv)],
+    [X+mounttop+random(-stkv,stkv),Y+10+random(-stkv,stkv)],
   ];
 
   rc.polygon(points, {
