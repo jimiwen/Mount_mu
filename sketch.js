@@ -1,34 +1,41 @@
 let seasonpicker= Xrandom(0,1);
 let boxStyle=Xrandom(0,1);
-
-let leadCames=Xrandom(2.1,5.1);
+let handStyle=Xrandom(0,1);
+let compStyle=Xrandom(0,1);
 
 function Xrandom(x,y){
   return (y-x)*fxrand()+x;
 }
 
 window.$fxhashFeatures = {
-  "YOUR WORLD BLEND": getSeasonStyle(seasonpicker),
-  "tea hut blend": getBoxStyle(boxStyle),
+  "Season": getSeasonStyle(seasonpicker),
+  "State of the scroll": getBoxStyle(boxStyle),
+  "Which Hand?": getHandStyle(handStyle)
 }
 
 console.log(getBoxStyle(boxStyle))
 console.log(getSeasonStyle(seasonpicker))
+console.log(getHandStyle(handStyle))
 
 
 function getSeasonStyle(value){
-  if (value<0.45) return 'Spring';
-  else if (value<0.65) return 'Summer'
-  else if (value<0.85) return 'Autumn'
+  if (value<0.5) return 'Spring';
+  else if (value<0.70) return 'Summer'
+  else if (value<0.90) return 'Autumn'
   else return 'Winter'
 }
 
 function getBoxStyle(value){
-  if (value<0.1) return 'ADD';
-  else if (value<0.3) return 'OVERLAY'
-  else return 'LIGHTEST'
+  if (value<0.02) return 'What frames?';
+  else if (value<0.1) return 'No, I paint outside the frame'
+  else return 'Pristine'
 }
 
+function getHandStyle(value){
+  if (value<0.5) return 'Right Handed';
+  else if (value<0.85) return 'Left Handed'
+  else return 'Ambidextrous'
+}
 
 
 const coloring={
@@ -37,53 +44,57 @@ const coloring={
 	color3: '#c2740c',
 }
 
+if (seasonpicker<0.5){
+   colors = {
+    main: "#f1f1f1",
+    bg: "#02040a",
+    sea1: '#0892c4',
+    sea2: '#02c0d9',
+    sand1:'#a18360',
+    sand2:'#52483c',
+  body2:'#069c94',
+  body1:'#64faf3'
+  };
+}else if (seasonpicker<0.7){
+  //summer 20%
+   colors = {
+    main: "#e3d5d5",
+    bg: "#692545",
+    sea1: '#bd112b',
+    sea2: '#de4573',
+    sand1:'#3c4d3d',
+    sand2:'#2d4038',
+  body2:'#f07832',
+  body1:'#edaf3b'
+  };
+}else if (seasonpicker<0.9){
+  // golden tiger 20%
+   colors = {
+    main: "#fa7c1b",
+    bg: "#f5eec6",
+    sea1: '#ffd608',
+    sea2: '#f5c207',
+    sand1:'#9e3a00',
+    sand2:'#d15b00',
+  body2:'#ffdc2b',
+  body1:'#ffbe0d'
+  };
+}else{
+  //10% winter
+   colors = {
+    main: "#02040a",
+    bg: "#f1f1f1",
+    sea1: '#0892c4',
+    sea2: '#02c0d9',
+    sand1:'#02040a',
+    sand2:'#52483c',
+    body2:'#069c94',
+    body1:'#64faf3'
+  };
+}
 
-// const colors = {
-//   main: "#f1f1f1",
-//   bg: "#02040a",
-//   sea1: '#065f80',
-//   sea2: '#52c2eb',
-//   sand1:'#a18360',
-//   sand2:'#52483c',
-// body2:'#056e61',
-// body1:'#70cfc4'
-// };
 
-//5% winter
-// const colors = {
-//   main: "#02040a",
-//   bg: "#f1f1f1",
-//   sea1: '#065f80',
-//   sea2: '#52c2eb',
-//   sand1:'#02040a',
-//   sand2:'#52483c',
-// body2:'#056e61',
-// body1:'#70cfc4'
-// };
 
-//summer 15%
-const colors = {
-  main: "#e3d5d5",
-  bg: "#692545",
-  sea1: '#bd112b',
-  sea2: '#de4573',
-  sand1:'#3c4d3d',
-  sand2:'#2d4038',
-body2:'#f07832',
-body1:'#edaf3b'
-};
-
-// golden tiger 15%
-// const colors = {
-//   main: "#fa7c1b",
-//   bg: "#f5eec6",
-//   sea1: '#ffd608',
-//   sea2: '#f5c207',
-//   sand1:'#9e3a00',
-//   sand2:'#d15b00',
-// body2:'#ffdc2b',
-// body1:'#ffbe0d'
-// };
 
 let  ground = 800 * 0.95;
 let rc;
@@ -99,8 +110,14 @@ randomSeed(int(fxrand()*100000000))
 }
 
 function draw() {
-blendMode(DARKEST) //畫出裱
-//blendMode(BLEND)
+
+
+
+if (boxStyle<0.1){
+  blendMode(DARKEST) //畫出裱
+}else{
+  blendMode(BLEND)
+}
 
 for (let k=0;k<40;k++){
 
@@ -112,11 +129,19 @@ hachangle=random(0,90)
 drawFrames()
 push()
 translate(0,500)
- drawMountainLine(hachangle)
+ drawMountainLine(hachangle,handStyle,compStyle)
   blendMode(BLEND)
- drawMountainLine(hachangle)
+ drawMountainLine(hachangle,handStyle,compStyle)
 pop()
-//blendMode(LIGHTEST)
+
+if (boxStyle<0.02){
+  blendMode(LIGHTEST)
+}else if (boxStyle<0.1){
+  blendMode(BLEND)
+}else{
+
+}
+
 drawFrames(colors.main,2)
 drawFrames(random([colors.sand1,colors.sand2]),1)
 drawFrames(random([colors.sand1,colors.sand2]),1)
@@ -234,7 +259,7 @@ function carve(){
 	let shapesize=random(330,700);
 	let stepsize=random(0.1,0.3);
 	stroke(random([coloring.color1,coloring.color2,coloring.color3]))
-	for (k=0;k<50+random(1050,35000);k+=1+random(0,3)) {
+	for (k=0;k<50+random(1050,5000);k+=1+random(0,3)) {
 		strokeWeight(0.1+random(0,0.5))
 
 
@@ -244,7 +269,6 @@ function carve(){
 			column_index = int(x_offset / resolution)
 			row_index = int(y_offset / resolution)
 			//	print(column_index,row_index)
-			// NOTE: normally you want to check the bounds here
 			grid_angle = m[column_index][row_index]
 			x_step = stepsize*resolution * cos(grid_angle)
 			y_step = stepsize*resolution * sin(grid_angle)
